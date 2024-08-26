@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    color: #191818;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    width: auto;
+    margin: 0 auto;
+    padding: auto;
+}
+
+.section {
+    background-color: #7b7d75;
+    position: relative;
+    margin: 10px 20px;
+    border: 3px solid #0f0f0f;
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    float: none;
+}
+.title {
+    position: absolute; 
+    width: 70px;
+    text-align: center;
+    top: 0px; /* Distance from the top */
+    right: 0px; /* Distance from the right */
+    background-color: #b54141; /* Background color for visibility */
+    padding: 5px 10px; /* Padding for spacing */
+    border: 2px solid #0f0e0e; /* Border for styling */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+/* Target the first section's title and set it to blue */
+.section:nth-child(1) .title {
+    background-color: #b54141;
+}
+
+/* Target the second section's title and set it to red */
+.section:nth-child(2) .title {
+    background-color: aquamarine;
+    color: aliceblue;
+}
+
+/* Target the third section's title and set it to black */
+.section:nth-child(3) .title {
+    background-color: coral;
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap; /* Allow the items to wrap onto the next line */
+    }
+
+    .section {
+        margin: 10px; /* Space between sections */
+        box-sizing: border-box; /* Ensure padding and borders are included in the element’s total width and height */
+        position: relative;
+    }
+
+    /* First two sections (50% width each) */
+    .section:nth-child(1),
+    .section:nth-child(2) {
+        flex: 1 1 calc(50% - 20px); /* 50% width minus the margin */
+    }
+
+    /* Third section (100% width) */
+    .section:nth-child(3) {
+        flex: 1 1 100%; /* Full width */
+    }
+}
+   
+ @media (min-width: 992px) {
+    .container {
+            display: flex;
+            justify-content: space-between;
+    }
+    .section {
+            flex: 1;
+            margin: 10px;
+            width: 50px;
+            float: left;
+            position: relative;
+            
+        }
+ }
